@@ -1,0 +1,150 @@
+:root {
+  --fond: #fdfaf4;
+  --texte: #23201c;
+  --accent: #b8791f;
+  --police: system-ui, "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police);
+  margin: 0;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--texte);
+  font-weight: 600;
+}
+.cartes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+.cartes > h2 {
+  grid-column: 1 / -1;
+}
+
+.cartes > li,
+.cartes > article {
+  background: white;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.2s;
+}
+.cartes > li:hover,
+.cartes > article:hover {
+  transform: scale(1.03);
+}
+.cartes > article.soins {
+  border-left: 8px solid var(--accent);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+th {
+  background: var(--accent);
+  color: white;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+td {
+  padding: 0.5rem;
+  background: white;
+}
+
+tr.paire td {
+  background: var(--fond);
+}
+label {
+  display: block;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+input[type="radio"] {
+  width: auto;
+}
+
+input[type="radio"] + label {
+  display: inline;
+  font-weight: normal;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header > img {
+  width: 400px;
+}
+.regles ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+.regles li {
+  border: 1px solid var(--texte);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+.regles li.importante {
+  background: var(--accent);
+}
+@media (min-width: 768px) {
+  .cartes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .regles ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .regles li.importante {
+    grid-column: 1 / -1;
+  }
+}
